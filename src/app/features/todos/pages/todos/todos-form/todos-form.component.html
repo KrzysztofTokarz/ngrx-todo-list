@@ -1,0 +1,6 @@
+<form [formGroup]="formGroup">
+  <input type="text" [formControl]="formGroup.controls.name" />
+  <div class="flex">
+    <ng-content></ng-content>
+  </div>
+</form>

@@ -1,0 +1,11 @@
+<ng-container *ngIf="todos$ | async as todos">
+  <app-todos-list
+    [items]="todos"
+    [selectedTodo]="selectedTodo$ | async"
+    (onSelectTodo)="selectTodo($event)"
+  ></app-todos-list>
+  <app-todos-edit *ngIf="selectedTodo$ | async; else addTodo"></app-todos-edit>
+  <ng-template #addTodo>
+    <app-todos-add></app-todos-add>
+  </ng-template>
+</ng-container>
